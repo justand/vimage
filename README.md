@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="frontend/public/android-chrome-maskable-512x512.png" alt="vimage" width="96">
+  <img src="frontend/public/android-chrome-maskable-512x512.png" alt="image" width="96">
 </p>
 
-<h1 align="center">vimage</h1>
+<h1 align="center">image</h1>
 
 <p align="center">
   <strong>Agent 驱动的 AI 视频创作工作台</strong><br>
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="#vimage-是什么"><strong>产品介绍</strong></a>
+  <a href="#image-是什么"><strong>产品介绍</strong></a>
   ·
   <a href="#快速开始"><strong>快速开始</strong></a>
   ·
@@ -29,9 +29,9 @@
 
 ---
 
-## vimage 是什么
+## image 是什么
 
-**vimage** 是一套可自托管的 AI 视频生产工作台：用创作 Agent 把「文字 / 素材」推进成「分镜 → 视频 → 成片」，并在每一个关键步骤保留人工审核与重做能力。
+**image** 是一套可自托管的 AI 视频生产工作台：用创作 Agent 把「文字 / 素材」推进成「分镜 → 视频 → 成片」，并在每一个关键步骤保留人工审核与重做能力。
 
 适合：
 
