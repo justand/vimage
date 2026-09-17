@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frontend/public/android-chrome-maskable-512x512.png" alt="image" width="96">
+
 </p>
 
 <h1 align="center">image</h1>
