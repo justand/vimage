@@ -39,6 +39,23 @@ def test_collect_masks_db_password(monkeypatch: pytest.MonkeyPatch, tmp_path: Pa
     assert db_line == "Database URL: postgresql+asyncpg://••••:••@db.example.com:5432/arcreel"
 
 
+def test_collect_does_not_leak_credentials_from_an_invalid_db_url(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    monkeypatch.setenv("ARCREEL_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv(
+        "DATABASE_URL",
+        "postgresql+asyncpg://arcuser:supersecretpassword@db.example.com:not-a-port/arcreel",
+    )
+    _reset_for_tests()
+
+    text = diag_mod.collect_diagnostics()
+    db_line = next(line for line in text.splitlines() if line.startswith("Database URL:"))
+
+    assert "supersecretpassword" not in db_line
+    assert db_line == "Database URL: <invalid database URL>"
+
+
 def test_collect_masks_db_query_secrets(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     monkeypatch.setenv("ARCREEL_DATA_DIR", str(tmp_path))
     monkeypatch.setenv(

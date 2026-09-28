@@ -83,8 +83,8 @@ def _db_url() -> str:
 
         return urlunparse(parsed._replace(netloc=netloc, query=query))
     except Exception:
-        # 脱敏失败时回退到原始字符串，避免诊断包完全失败；调用方 _safe 会再兜一层。
-        return raw
+        # URL 解析失败时不能回退原始值，否则诊断包可能泄露凭据。
+        return "<invalid database URL>"
 
 
 def _log_level() -> str:
@@ -119,7 +119,7 @@ def collect_diagnostics(*, app_version: Callable[[], object] | None = None) -> s
         ("Report generated", lambda: datetime.now(UTC).isoformat()),
     ]
 
-    lines = ["vimage diagnostics", "=" * 40]
+    lines = ["ArcReel diagnostics", "=" * 40]
     for label, fn in fields:
         lines.append(f"{label}: {_safe(fn, label)}")
     return "\n".join(lines) + "\n"

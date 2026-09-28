@@ -457,8 +457,7 @@ Check:
 
 Provider models change frequently, so:
 
-- The README maintains only the capability matrix;
-- This document maintains configuration principles;
+- This document maintains the capability matrix and configuration principles;
 - The Settings page is authoritative for the specific model list;
 - Provider pages are authoritative for official pricing;
 - When vimage adds or removes a provider, update the matrix, Settings-page help text, and tests together.
