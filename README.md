@@ -187,5 +187,5 @@ docker compose up -d --build
 ---
 
 <p align="center">
-  <strong>vimage</strong> · 把构想做成可审可改的影像流水线
+  <strong>ArcReel</strong> · 把构想做成可审可改的影像流水线
 </p>
